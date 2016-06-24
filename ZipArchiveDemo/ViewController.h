@@ -15,5 +15,9 @@
 //解密
 - (IBAction)decryption:(id)sender;
 
+//读取文件夹
+- (IBAction)readfile:(id)sender;
+
+@property (strong, nonatomic) IBOutlet UILabel *readFileLable;
 @end
 

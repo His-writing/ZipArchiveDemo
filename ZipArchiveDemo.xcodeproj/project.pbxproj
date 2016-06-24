@@ -19,7 +19,7 @@
 		442A9F371D1CCEE300CDDB3C /* zip.c in Sources */ = {isa = PBXBuildFile; fileRef = 442A9F301D1CCEE300CDDB3C /* zip.c */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		442A9F381D1CCEE300CDDB3C /* ZipArchive.mm in Sources */ = {isa = PBXBuildFile; fileRef = 442A9F331D1CCEE300CDDB3C /* ZipArchive.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		442A9F3A1D1CD01500CDDB3C /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 442A9F391D1CD01500CDDB3C /* libz.tbd */; };
-		442A9F3E1D1CE0C400CDDB3C /* 99.txt in Resources */ = {isa = PBXBuildFile; fileRef = 442A9F3D1D1CE0C400CDDB3C /* 99.txt */; };
+		442A9F401D1D042800CDDB3C /* test.zip in Resources */ = {isa = PBXBuildFile; fileRef = 442A9F3F1D1D042800CDDB3C /* test.zip */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,7 +45,7 @@
 		442A9F321D1CCEE300CDDB3C /* ZipArchive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZipArchive.h; sourceTree = "<group>"; };
 		442A9F331D1CCEE300CDDB3C /* ZipArchive.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ZipArchive.mm; sourceTree = "<group>"; };
 		442A9F391D1CD01500CDDB3C /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
-		442A9F3D1D1CE0C400CDDB3C /* 99.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = 99.txt; path = ZipArchiveDemo/99.txt; sourceTree = "<group>"; };
+		442A9F3F1D1D042800CDDB3C /* test.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = test.zip; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,7 +63,7 @@
 		442A9F041D1CCED200CDDB3C = {
 			isa = PBXGroup;
 			children = (
-				442A9F3D1D1CE0C400CDDB3C /* 99.txt */,
+				442A9F3F1D1D042800CDDB3C /* test.zip */,
 				442A9F391D1CD01500CDDB3C /* libz.tbd */,
 				442A9F0F1D1CCED400CDDB3C /* ZipArchiveDemo */,
 				442A9F0E1D1CCED300CDDB3C /* Products */,
@@ -188,8 +188,8 @@
 			files = (
 				442A9F201D1CCED500CDDB3C /* LaunchScreen.storyboard in Resources */,
 				442A9F1D1D1CCED500CDDB3C /* Assets.xcassets in Resources */,
-				442A9F3E1D1CE0C400CDDB3C /* 99.txt in Resources */,
 				442A9F1B1D1CCED400CDDB3C /* Main.storyboard in Resources */,
+				442A9F401D1D042800CDDB3C /* test.zip in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -68,20 +68,42 @@
     
     
 }
+//+(NSString *)mainBundleStringName:(NSString *)Name{
+//    
+//    NSString *path = [[NSBundle mainBundle] pathForResource:Name ofType:@"txt"];
+//    
+//    NSString *str2=[NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
+//    
+//    return str2;
+//}
+
+-(NSString *)libCachePath
+{
+    NSArray * paths = NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES);
+    return [[paths objectAtIndex:0] stringByAppendingFormat:@"/Caches/text"];
+}
 
 - (IBAction)decryption:(id)sender {
     
-    //路径
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *documentpath = ([paths count] > 0) ? [paths objectAtIndex:0] : nil;
+//    //路径
+//    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+//    NSString *documentpath = ([paths count] > 0) ? [paths objectAtIndex:0] : nil;
+//    
+//    NSString* l_zipfile = [documentpath stringByAppendingString:@"/test.zip"] ;
+//    
+//    NSString* unzipto = [documentpath stringByAppendingString:@"/test"] ;
     
-    NSString* l_zipfile = [documentpath stringByAppendingString:@"/test.zip"] ;
-    NSString* unzipto = [documentpath stringByAppendingString:@"/test"] ;
+    
+    
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"test" ofType:@"zip"];
+    
+//    NSString *str2=[NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
+
+    
+    
     
     
     ZipArchive* zipFile = [[ZipArchive alloc] init];
-    
-    
     
     
     
@@ -90,11 +112,11 @@
     
     //同样，对应的就有两种打开zip包的方式，带密码和不带密码
     
-    [zipFile UnzipOpenFile:l_zipfile Password:@"123456"];
+    [zipFile UnzipOpenFile:path Password:@"123456"];
     
     //压缩包释放到的位置，需要一个完整路径
     
-    [zipFile UnzipFileTo:unzipto overWrite:YES];
+    [zipFile UnzipFileTo:[self libCachePath] overWrite:YES];
     
     
     [zipFile UnzipCloseFile];
@@ -102,8 +124,23 @@
     [zipFile release];
     
     //记得释放
+    
+    
+}
+
+- (IBAction)readfile:(id)sender {
+    NSFileManager* fm=[NSFileManager defaultManager];
+
+    NSData *data = [fm contentsAtPath:[NSString stringWithFormat:@"%@/99.txt",[self libCachePath]]];
+    
+    
+    NSString* aStr= [[NSString alloc] initWithData:data   encoding:NSASCIIStringEncoding];
 
     
+    
+    
+
+    self.readFileLable.text=[NSString stringWithFormat:@"%@",aStr];
     
     
 }
